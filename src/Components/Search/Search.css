@@ -1,0 +1,25 @@
+.banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+    url('../../logos/back.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+}
+.search-box {
+  padding: 6px 22px;
+  border-radius: 30px;
+}
+.banner .search-btn {
+  position: absolute;
+  color: #fff;
+  font-weight: 600;
+  background-color: #00b36b;
+  box-shadow: 1px 1px 4px #00fa98;
+  border-radius: 30px;
+  padding: 6px 22px;
+  top: 0;
+  right: 15px;
+  height: 100%;
+}

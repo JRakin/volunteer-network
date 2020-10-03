@@ -1,0 +1,16 @@
+.option {
+  cursor: pointer;
+  width: 250px;
+  font-weight: 600;
+  padding: 7px 20px;
+}
+.active {
+  color: #00b36b;
+  border-radius: 30px;
+  background-color: #ebecf0;
+  box-shadow: 1px 1px 4px #babecc, -4px -4px 8px #fff;
+}
+.admin-section {
+  height: 100vh;
+  background-color: #ebecf0;
+}

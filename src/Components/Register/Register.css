@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box !important;
+  margin: 0;
+  padding: 0;
+}
+.register {
+  background-color: #ebecf0;
+  height: 100vh;
+}
+.register form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 50px 40px;
+}
+.form-control {
+  padding: 16px;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  background-color: #ebecf0;
+  text-shadow: 1px 1px 0 #fff;
+  box-shadow: inset 1px 1px 4px #babecc, inset -2px -2px 4px #fff;
+  transition: all 0.4s;
+}
+.form-control:focus {
+  box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
+}
+.registerBtn {
+  background-color: #ebecf0;
+  color: red;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 30px;
+  box-shadow: inset 1px 1px 4px #babecc, inset -2px -2px 4px #fff;
+  -webkit-transition: box-shadow 0.5s;
+  transition: 0.4s;
+}
+.registerBtn:hover {
+  color: red;
+  box-shadow: -2px -2px 5px #fff, 2px 2px 5px #babecc;
+}
+.logo-container img {
+  width: 30%;
+}

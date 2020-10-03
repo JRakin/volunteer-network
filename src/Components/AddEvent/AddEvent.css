@@ -1,0 +1,21 @@
+.eventForm {
+  background-color: #fff;
+  border-radius: 12px;
+  height: 60vh;
+  box-shadow: inset 1px 1px 4px #babecc, inset -3px -3px 4px #fff;
+}
+.description-text {
+  background-color: #fff;
+  box-shadow: inset 1px 1px 4px #babecc, inset 2px 2px 4px #fff;
+}
+.addBtn {
+  background-color: #00b36b;
+  color: white;
+  border-radius: 30px;
+  font-weight: 600;
+  box-shadow: inset 1px 1px 4px #00b36b, inset -1px -1px 4px #04f393;
+}
+.addBtn:hover {
+  color: #fff;
+  box-shadow: -1px -1px 2px #04f393, 1px 1px 4px #00b36b;
+}

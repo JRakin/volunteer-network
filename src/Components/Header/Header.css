@@ -1,0 +1,11 @@
+.btn-login,
+.btn-register {
+  background-color: #00b36b;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 30px;
+  padding: 6px 22px;
+}
+.btn-login {
+  background-color: red;
+}
