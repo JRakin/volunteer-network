@@ -1,0 +1,10 @@
+.card-item {
+  border-radius: 10px;
+  box-shadow: -2px -2px 5px #fff, 2px 2px 5px #babecc;
+  transition: all 0.3s;
+  cursor: pointer;
+  background-image: linear-gradient(45deg, orange, orangered);
+}
+.card-item:hover {
+  transform: scale(1.1);
+}

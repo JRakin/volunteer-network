@@ -42,3 +42,6 @@
 .logo-container img {
   width: 30%;
 }
+.warning {
+  color: red;
+}

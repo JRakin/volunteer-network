@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Register.css';
 import { useForm } from 'react-hook-form';
 import Logo from '../../logos/Group 1329.png';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
 
 const Register = () => {
-  const { errors, register, watch, handleSubmit } = useForm();
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  const { errors, register, handleSubmit } = useForm();
   const onSubmit = (data) => {};
   return (
     <div className="register">
@@ -21,6 +23,7 @@ const Register = () => {
               className="form-control"
               name="name"
               type="text"
+              value={loggedInUser.name}
               ref={register({ required: true })}
               placeholder="Your name"
             />
@@ -31,42 +34,43 @@ const Register = () => {
               className="form-control"
               name="email"
               type="email"
+              value={loggedInUser.email}
               ref={register({ required: true })}
               placeholder="Your email"
             />
-            {errors.email && <span className="warning">Name is required!</span>}
+            {errors.email && (
+              <span className="warning">Email is required!</span>
+            )}
           </div>
           <div className="form-group">
             <input
               className="form-control"
               name="date"
-              type="text"
+              type="date"
               ref={register({ required: true })}
               placeholder="Date"
             />
-            {errors.date && <span className="warning">Name is required!</span>}
+            {errors.date && <span className="warning">Date is required!</span>}
           </div>
           <div className="form-group">
             <input
               className="form-control"
               name="description"
               type="text"
-              ref={register({ required: true })}
               placeholder="Description"
             />
-            {errors.description && (
-              <span className="warning">Name is required!</span>
-            )}
           </div>
           <div className="form-group">
             <input
               className="form-control"
-              name="name"
+              name="eventName"
               type="text"
               ref={register({ required: true })}
-              placeholder="Your name"
+              placeholder="Event name"
             />
-            {errors.name && <span className="warning">Name is required!</span>}
+            {errors.eventName && (
+              <span className="warning">Event name is required!</span>
+            )}
           </div>
           <div className="form-group">
             <button className="registerBtn btn btn-block">Register</button>

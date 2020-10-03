@@ -26,7 +26,7 @@ const Header = () => {
     <div className="container">
       <nav className="navbar navbar-expand justify-content-between">
         <Link to="/" className="navbar-brand w-15">
-          <img className="w-25" src={Logo} alt="" />
+          <img style={{ width: '25%' }} src={Logo} alt="" />
         </Link>
         <ul className="navbar-nav align-items-center">
           <li className="nav-item">

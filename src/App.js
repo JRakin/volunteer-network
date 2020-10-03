@@ -1,6 +1,5 @@
 import React, { createContext, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import logo from './logo.svg';
 import './App.css';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Register from './Components/Register/Register';
@@ -8,6 +7,7 @@ import Search from './Components/Search/Search';
 import Admin from './Components/Admin/Admin';
 import Login from './Components/Login/Login';
 import Header from './Components/Header/Header';
+import ShowEvents from './Components/ShowEvents/ShowEvents';
 
 export const UserContext = createContext();
 
@@ -20,6 +20,7 @@ function App() {
           <Route exact path="/">
             <Header></Header>
             <Search></Search>
+            <ShowEvents></ShowEvents>
           </Route>
           <Route path="/login">
             <Login></Login>
@@ -27,6 +28,9 @@ function App() {
           <PrivateRoute path="/register">
             <Register></Register>
           </PrivateRoute>
+          <Route path="/admin">
+            <Admin></Admin>
+          </Route>
         </Switch>
       </Router>
     </UserContext.Provider>
