@@ -8,6 +8,7 @@ import Admin from './Components/Admin/Admin';
 import Login from './Components/Login/Login';
 import Header from './Components/Header/Header';
 import ShowEvents from './Components/ShowEvents/ShowEvents';
+import ShowEventList from './Components/ShowEventList/ShowEventList';
 
 export const UserContext = createContext();
 
@@ -25,8 +26,12 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
-          <PrivateRoute path="/register">
+          <PrivateRoute path="/event/:id">
             <Register></Register>
+          </PrivateRoute>
+          <PrivateRoute path="/showList">
+            <Header></Header>
+            <ShowEventList></ShowEventList>
           </PrivateRoute>
           <Route path="/admin">
             <Admin></Admin>

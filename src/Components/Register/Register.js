@@ -1,14 +1,44 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './Register.css';
 import { useForm } from 'react-hook-form';
 import Logo from '../../logos/Group 1329.png';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import { UserContext } from '../../App';
 
 const Register = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const { errors, register, handleSubmit } = useForm();
-  const onSubmit = (data) => {};
+
+  const [event, setEvent] = useState({});
+
+  const { id } = useParams();
+  const history = useHistory();
+
+  useEffect(() => {
+    fetch('http://localhost:5000/event/' + id)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setEvent(data);
+      });
+  }, [id]);
+
+  console.log(event);
+  console.log(id);
+  const onSubmit = (data) => {
+    const newData = { ...data, id };
+
+    fetch('http://localhost:5000/addUserEvent', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newData),
+    });
+
+    history.push('/showList');
+  };
+
   return (
     <div className="register">
       <div className="container">
@@ -23,7 +53,7 @@ const Register = () => {
               className="form-control"
               name="name"
               type="text"
-              value={loggedInUser.name}
+              defaultValue={loggedInUser.name}
               ref={register({ required: true })}
               placeholder="Your name"
             />
@@ -34,7 +64,7 @@ const Register = () => {
               className="form-control"
               name="email"
               type="email"
-              value={loggedInUser.email}
+              defaultValue={loggedInUser.email}
               ref={register({ required: true })}
               placeholder="Your email"
             />
@@ -65,6 +95,7 @@ const Register = () => {
               className="form-control"
               name="eventName"
               type="text"
+              defaultValue={event.name}
               ref={register({ required: true })}
               placeholder="Event name"
             />
@@ -73,7 +104,9 @@ const Register = () => {
             )}
           </div>
           <div className="form-group">
-            <button className="registerBtn btn btn-block">Register</button>
+            <button type="submit" className="registerBtn btn btn-block">
+              Register
+            </button>
           </div>
         </form>
       </div>
