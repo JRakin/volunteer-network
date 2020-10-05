@@ -46,8 +46,8 @@ const Header = () => {
           </li>
           <li className="nav-item">
             {!loggedInUser.isLoggedIn ? (
-              <Link to="/login" className="nav-link">
-                <button className="btn btn-block btn-login">Login</button>
+              <Link to="/admin" className="nav-link">
+                <button className="btn btn-block btn-login">Admin</button>
               </Link>
             ) : (
               <button

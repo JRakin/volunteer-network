@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import fakeData from '../../fakeData/fakeData';
 import EventItem from '../EventItem/EventItem';
 
 const ShowEvents = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/events')
+    let isMounted = true;
+    fetch('https://limitless-springs-25955.herokuapp.com/events')
       .then((res) => res.json())
       .then((result) => {
-        setData(result);
+        if (isMounted) {
+          setData(result);
+        }
       });
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   return (

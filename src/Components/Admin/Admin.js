@@ -4,9 +4,11 @@ import Logo from '../../logos/Group 1329.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Admin.css';
 import AddEvent from '../AddEvent/AddEvent';
+import { Link } from 'react-router-dom';
+import ShowAdminList from '../ShowAdminList/ShowAdminList';
 
 const Admin = () => {
-  const [selectActive, setSelectActive] = useState('');
+  const [selectActive, setSelectActive] = useState('list');
 
   const loadList = () => {
     setSelectActive('list');
@@ -20,7 +22,9 @@ const Admin = () => {
         <div className="row py-5">
           <div className="col-md-3">
             <div>
-              <img className="w-75" src={Logo} alt="" />
+              <Link to="/">
+                <img className="w-75" src={Logo} alt="" />
+              </Link>
             </div>
             <div className="py-4">
               <p
@@ -45,13 +49,19 @@ const Admin = () => {
               </p>
             </div>
           </div>
-          <div className="col-md-9">
-            <AddEvent></AddEvent>
-          </div>
+          <div className="col-md-9">{showActive(selectActive)}</div>
         </div>
       </div>
     </div>
   );
 };
+
+function showActive(active) {
+  if (active === 'list') {
+    return <ShowAdminList></ShowAdminList>;
+  } else {
+    return <AddEvent></AddEvent>;
+  }
+}
 
 export default Admin;

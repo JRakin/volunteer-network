@@ -36,6 +36,10 @@ function App() {
           <Route path="/admin">
             <Admin></Admin>
           </Route>
+          <PrivateRoute path="/register">
+            <Register></Register>
+          </PrivateRoute>
+          <Route path="*"></Route>
         </Switch>
       </Router>
     </UserContext.Provider>

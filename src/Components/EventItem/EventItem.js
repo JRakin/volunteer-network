@@ -4,9 +4,9 @@ import './EventItem.css';
 
 const EventItem = (props) => {
   const event = props.item;
-
   const history = useHistory();
 
+  //redirecting user
   const handleClick = (id) => {
     history.push('/event/' + id);
   };
@@ -19,14 +19,17 @@ const EventItem = (props) => {
     'indianred',
     'slateblue',
     'teal',
-    'darkcyan',
+    'chocolate',
     'salmon',
+    'firebrick',
+    'tomato',
+    'fuchsia',
+    'navy',
+    'darkturquoise',
   ];
+  //dynamically giving background color for each card
   const randomNumber = Math.floor(Math.random() * changeColor.length);
-  console.log(randomNumber);
   const color = changeColor[randomNumber];
-
-  console.log(color);
 
   return (
     <div className="col-md-3">

@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import Logo from '../../logos/Group 1329.png';
 import { Link, useHistory, useParams } from 'react-router-dom';
 import { UserContext } from '../../App';
+import Swal from 'sweetalert2';
 
 const Register = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -15,28 +16,28 @@ const Register = () => {
   const history = useHistory();
 
   useEffect(() => {
-    fetch('http://localhost:5000/event/' + id)
+    fetch('https://limitless-springs-25955.herokuapp.com/event/' + id)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setEvent(data);
       });
   }, [id]);
 
-  console.log(event);
-  console.log(id);
   const onSubmit = (data) => {
     const newData = { ...data, id };
 
-    fetch('http://localhost:5000/addUserEvent', {
+    fetch('https://limitless-springs-25955.herokuapp.com/addUserEvent', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(newData),
-    });
-
-    history.push('/showList');
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        Swal.fire('Congrats', 'You successfully registered!', 'success');
+        history.push('/showList');
+      });
   };
 
   return (
