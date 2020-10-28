@@ -17,7 +17,7 @@ const ShowEventList = () => {
       .then((data) => {
         setUserEvents(data);
       });
-  }, []);
+  }, [loggedInUser.name]);
 
   //   getting all the events by keys
   useEffect(() => {

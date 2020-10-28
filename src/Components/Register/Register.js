@@ -35,7 +35,7 @@ const Register = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        Swal.fire('Congrats', 'You successfully registered!', 'success');
+        Swal.fire('Congrats', 'You have registered successfully!', 'success');
         history.push('/showList');
       });
   };

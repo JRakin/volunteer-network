@@ -1,8 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live site link [LIVE](https://volunteer-network-jr.web.app/).
 
-## Available Scripts
+## About Project
 
-In the project directory, you can run:
+Volunteer network is a volunteer service management application. <br>
+Where a user can register to the volunteer services. <br>
+Admin can add or manage services and registered list.
 
 ### `npm start`
 
